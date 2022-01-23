@@ -1,0 +1,110 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+<div class="container" id="myrow">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" id='uploadimg' href="#upload-image">Upload X-ray of patient</a>
+        </li>
+    </ul>
+
+    <div class="container">
+        <div class="tab-pane active" id="upload-image" role="tabpanel" aria-labelledby="uploadimg">
+            <div class="row">
+                <div class="col-xs-12">
+                    <form action="#" method="post" enctype="multipart/form-data">
+                        <!--  file input  -->
+                        <p>
+                            <input type="file" name="image_name" class="btn  btn-success" required>
+                        </p>
+
+                        <p>
+                            <strong>Instructions</strong>: <br> Please upload the image of extension .png, .jpg, .jpeg
+                            other extension will <strong>redirect </strong> the page to error 404
+                        </p>
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" style="color: black;" href="#">Tick symptoms of patient</a>
+                            </li>
+                        </ul>
+                        <div class='container'>
+                            <div class='check selectContent'>
+                                <div class='row1'>Breathing Problem <input type="checkbox" value="0" name="mycheckbox">
+                                </div>
+                                <div class='row1'>Fever <input type="checkbox" value="1" name="mycheckbox">
+                                </div>
+                                <div class='row1'>Dry Cough <input type="checkbox" value="2" name="mycheckbox">
+                                </div>
+                                <div class='row1'>Sore throat <input type="checkbox" value="3" name="mycheckbox">
+                                </div>
+                                <!-- </div> -->
+                                <!-- <div class='check selectContent'> -->
+                                <div class='row2'>Hyper Tension <input type="checkbox" value="4" name="mycheckbox">
+                                </div>
+                                <div class='row2'>Abroad travel <input type="checkbox" value="5" name="mycheckbox">
+                                </div>
+                                <div class='row2'>Contact with COVID Patient <input type="checkbox" value="6"
+                                        name="mycheckbox"></div>
+                                <!-- </div> -->
+                                <!-- <div class='check selectContent'> -->
+                                <div class='row3'>Attended Large Gathering <input type="checkbox" value="7"
+                                        name="mycheckbox"></div>
+                                <div class='row3'>Visited Public Exposed Places <input type="checkbox" value="8"
+                                        name="mycheckbox"></div>
+                                <div class='row3'>Family working in Public Exposed Places <input type="checkbox"
+                                        value="9" name="mycheckbox"></div>
+                            </div>
+                        </div>
+                        <!--  submit -->
+                        <p>
+                            <input type="submit" value="submit" class='btn btn-success'>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if fileupload %}
+<div class="container">
+    <div class="row">
+        <div class="col col-8">
+            {% for i in data %}
+            {% if i == 'COVID'%}
+            <p style="color: white; font-size: larger; background-color: red;" class="res">{{i}}</p>
+
+            {% elif i == 'VIRAL PNEUMONIA' %}
+            <p style="color: white; font-size: larger; background-color: red;" class="res1">{{i}}</p>
+
+            {% elif i == 'NORMAL' %}
+            <p style="color: white; font-size: larger; background-color: green;" class="res">{{i}}</p>
+
+            {% elif i not in ['COVID','PNEUMONIA','NORMAL'] %}
+            <p style="background-color: cyan " class="des">{{i}}</p>
+
+            {% endif %}
+
+            {% endfor %}
+
+            {% if data[0] == 'COVID' %}
+            <img src="\static\images\covid display.jpg" alt="covid image" class="img-fluid display">
+            {% endif %}
+            {% if data[0] == 'NORMAL' %}
+            <img src="\static\images\normal display.jpg" alt="Normal image" class="img-fluid display">
+            {% endif %}
+            {% if data[0] == 'VIRAL PNEUMONIA' %}
+            <img src="\static\images\pneumonia display.jpg" alt="pneumonia image" class="img-fluid display">
+            {% endif %}
+        </div>
+        <div class="col col-4">
+            <img src="static/uploaded/{{ image }}" alt="uploaded image" class="img-fluid image">
+            <p class="image_name">Image name: {{image}}</p>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock %}
