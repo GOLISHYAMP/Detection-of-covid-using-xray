@@ -12,11 +12,11 @@
     <div class="container">
         <div class="tab-pane active" id="upload-image" role="tabpanel" aria-labelledby="uploadimg">
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-md-12">
                     <form action="#" method="post" enctype="multipart/form-data">
                         <!--  file input  -->
                         <p>
-                            <input type="file" name="image_name" class="btn  btn-success" required>
+                            <input type="file" name="image_name" class="btn btn-success" required>
                         </p>
 
                         <p>
@@ -25,11 +25,11 @@
                         </p>
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
-                                <a class="nav-link active" style="color: black;" href="#">Tick symptoms of patient</a>
-                            </li>
+                                <a class="nav-link active" style="color: black;" href="#">Select symptoms of patient</a>
+                            </li> 
                         </ul>
                         <div class='container'>
-                            <div class='check selectContent'>
+                            <!-- <div class='check selectContent'>
                                 <div class='row1'>Breathing Problem <input type="checkbox" value="0" name="mycheckbox">
                                 </div>
                                 <div class='row1'>Fever <input type="checkbox" value="1" name="mycheckbox">
@@ -38,27 +38,67 @@
                                 </div>
                                 <div class='row1'>Sore throat <input type="checkbox" value="3" name="mycheckbox">
                                 </div>
-                                <!-- </div> -->
-                                <!-- <div class='check selectContent'> -->
+                                
                                 <div class='row2'>Hyper Tension <input type="checkbox" value="4" name="mycheckbox">
                                 </div>
-                                <div class='row2'>Abroad travel <input type="checkbox" value="5" name="mycheckbox">
+                                <div class='row2'>Abroad travel History<input type="checkbox" value="5" name="mycheckbox">
                                 </div>
                                 <div class='row2'>Contact with COVID Patient <input type="checkbox" value="6"
                                         name="mycheckbox"></div>
-                                <!-- </div> -->
-                                <!-- <div class='check selectContent'> -->
+                                
                                 <div class='row3'>Attended Large Gathering <input type="checkbox" value="7"
                                         name="mycheckbox"></div>
                                 <div class='row3'>Visited Public Exposed Places <input type="checkbox" value="8"
                                         name="mycheckbox"></div>
                                 <div class='row3'>Family working in Public Exposed Places <input type="checkbox"
                                         value="9" name="mycheckbox"></div>
+                            </div> -->
+                            <div class="check">
+                                <label class="input-group mb-3 mt-3">
+                                    <span class="input-group-text"><input type="checkbox" value="0" name="mycheckbox"></span>
+                                    <span class="form-control btn btn-dark text-white">Breathing Problem</span>
+                                </label>
+                                <label class="input-group mb-3">
+                                    <span class="input-group-text"><input type="checkbox" value="1" name="mycheckbox"></span>
+                                    <span class="form-control btn btn-dark text-white">Fever</span>
+                                </label>
+                                <label class="input-group mb-3">
+                                    <span class="input-group-text"><input type="checkbox" value="2" name="mycheckbox"></span>
+                                    <span class="form-control btn btn-dark text-white">Dry Cough</span>
+                                </label>
+                                <label class="input-group mb-3">
+                                    <span class="input-group-text"><input type="checkbox" value="3" name="mycheckbox"></span>
+                                    <span class="form-control btn btn-dark text-white">Sore throat</span>
+                                </label>
+                                <label class="input-group mb-3">
+                                    <span class="input-group-text"><input type="checkbox" value="4" name="mycheckbox"></span>
+                                    <span class="form-control btn btn-dark text-white">Hyper Tension</span>
+                                </label>
+                                <label class="input-group mb-3">
+                                    <span class="input-group-text"><input type="checkbox" value="5" name="mycheckbox"></span>
+                                    <span class="form-control btn btn-dark text-white">Abroad travel History</span>
+                                </label>
+                                <label class="input-group mb-3">
+                                    <span class="input-group-text"><input type="checkbox" value="6" name="mycheckbox"></span>
+                                    <span class="form-control btn btn-dark text-white">Contact with COVID Patient</span>
+                                </label>
+                                <label class="input-group mb-3">
+                                    <span class="input-group-text"><input type="checkbox" value="7" name="mycheckbox"></span>
+                                    <span class="form-control btn btn-dark text-white">Attended Large Gathering</span>
+                                </label>
+                                <label class="input-group mb-3">
+                                    <span class="input-group-text"><input type="checkbox" value="8" name="mycheckbox"></span>
+                                    <span class="form-control btn btn-dark text-white">Visited Public exposed places</span>
+                                </label>
+                                <label class="input-group mb-3">
+                                    <span class="input-group-text"><input type="checkbox" value="9" name="mycheckbox"></span>
+                                    <span class="form-control btn btn-dark text-white">Family working in Public Exposed Places</span>
+                                </label>
                             </div>
                         </div>
                         <!--  submit -->
                         <p>
-                            <input type="submit" value="submit" class='btn btn-success'>
+                            <input type="submit" value="submit" class='btn btn-lg btn-success'>
                         </p>
                     </form>
                 </div>
@@ -69,20 +109,20 @@
 
 {% if fileupload %}
 <div class="container">
-    <div class="row">
-        <div class="col col-8">
+    <div class="row mt-2">
+        <div class="col-md-8 col-sm-12">
             {% for i in data %}
             {% if i == 'COVID'%}
-            <p style="color: white; font-size: larger; background-color: red;" class="res">{{i}}</p>
+            <p class="res bg-danger text-white fw-bolder p-2">{{i}}</p>
 
             {% elif i == 'VIRAL PNEUMONIA' %}
-            <p style="color: white; font-size: larger; background-color: red;" class="res1">{{i}}</p>
+            <p class="res1 bg-success text-white fw-bolder p-2">{{i}}</p>
 
             {% elif i == 'NORMAL' %}
-            <p style="color: white; font-size: larger; background-color: green;" class="res">{{i}}</p>
+            <p class="res bg-danger text-white fw-bolder p-2">{{i}}</p>
 
             {% elif i not in ['COVID','PNEUMONIA','NORMAL'] %}
-            <p style="background-color: cyan " class="des">{{i}}</p>
+            <p class="des bg-info text-white fw-bolder p-2">{{i}}</p>
 
             {% endif %}
 
@@ -98,9 +138,9 @@
             <img src="\static\images\pneumonia display.jpg" alt="pneumonia image" class="img-fluid display">
             {% endif %}
         </div>
-        <div class="col col-4">
+        <div class="col-md-4 col-sm-12 mt-4 mt-md-0">
             <img src="static/uploaded/{{ image }}" alt="uploaded image" class="img-fluid image">
-            <p class="image_name">Image name: {{image}}</p>
+            <p class="image_name text-success fw-bold border p-1">Image name: {{image}}</p>
         </div>
     </div>
 </div>

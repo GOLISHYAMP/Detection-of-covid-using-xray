@@ -4,25 +4,13 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
-body{
-    width: 100%;
-}
-.li-item{
-    color: white;
-}
-.li-item:hover{
-    transform: scale(1.1);
-    transition: 0.3s;
-}
 .projectTitle{
     text-align: center;
 }
 .selectContent{
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-flow: row wrap;
-    
+    flex-direction: column;
+    justify-content: center;    
 }
 p{
     text-align: center;
@@ -39,7 +27,6 @@ p{
     background-color: #F2F4F4;
 }
 .row1{
-    
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 3px;
@@ -79,7 +66,7 @@ p{
     background-color: rgb(161, 228, 228);
 }
 
-.res{
+/* .res{
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 3px;
@@ -92,9 +79,9 @@ p{
     border-color: goldenrod;
     font-weight: bolder;
     text-align: center;
-}
+} */
 
-.res1{
+/* .res1{
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 3px;
@@ -107,9 +94,9 @@ p{
     border-color: goldenrod;
     font-weight: bolder;
     text-align: center;
-}
+} */
 
-.des{
+/* .des{
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 3px;
@@ -122,13 +109,13 @@ p{
     background-color: rgb(161, 228, 228);
     border-color: goldenrod;
     font-weight: bold;
-}
+} */
 
 .image{
     border-radius:5px;
     border:2px solid goldenrod;
 }
-.image_name{
+/* .image_name{
     font-weight: bold;
     padding-left: 10px;
     padding-right: 10px;
@@ -141,7 +128,7 @@ p{
     margin-right: 40px;
     text-align: center;
     margin-top: 10px;
-}
+} */
 
 .display{
     border-radius: 20px;
